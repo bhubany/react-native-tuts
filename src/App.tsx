@@ -1,14 +1,54 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, SectionList, StyleSheet, Text, View} from 'react-native';
 
 function App(): JSX.Element {
+  const users = [
+    {
+      id: 1,
+      name: 'Abcd',
+      data: ['PHP', 'react.js', 'Angular'],
+    },
+    {
+      id: 2,
+      name: 'efgh',
+      data: ['java', 'c', 'c++'],
+    },
+    {
+      id: 3,
+      name: 'ijk',
+      data: ['html', 'css', 'javascript'],
+    },
+    {
+      id: 4,
+      name: 'lmn',
+      data: ['l', 'm', 'n'],
+    },
+    {
+      id: 5,
+      name: 'opq',
+      data: ['o', 'p', 'q'],
+    },
+    {
+      id: 6,
+      name: 'rst',
+      data: ['R', 'S', 'T'],
+    },
+  ];
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
         <Text>Hello From React Native</Text>
       </View>
       <ScrollView>
-        <Text>From Scroll View</Text>
+        <SectionList
+          sections={users}
+          renderItem={({item}) => (
+            <Text style={{fontSize: 20, marginLeft: 20}}>{item}</Text>
+          )}
+          renderSectionHeader={({section: {name}}) => (
+            <Text style={{fontSize: 25, color: 'red'}}> {name}</Text>
+          )}
+        />
       </ScrollView>
     </View>
   );
