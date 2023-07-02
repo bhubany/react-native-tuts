@@ -1,5 +1,6 @@
 import React from 'react';
 import {ScrollView, Text, View} from 'react-native';
+import Forms from './components/Forms';
 
 function App(): JSX.Element {
   return (
@@ -10,11 +11,12 @@ function App(): JSX.Element {
             fontSize: 30,
             display: 'flex',
             textAlign: 'center',
-            paddingTop: 10,
+            padding: 10,
             fontWeight: 'bold',
           }}>
           Hello From React Native
         </Text>
+        <Forms />
       </View>
     </ScrollView>
   );
