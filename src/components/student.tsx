@@ -1,18 +1,7 @@
-import React, {Component} from 'react';
-import {
-  Button,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import Student from './components/student';
+import {Component} from 'react';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
-class App extends Component {
-  fruit = () => {
-    console.warn('Apple');
-  };
+class Student extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -20,19 +9,14 @@ class App extends Component {
           <Text>Hello From React Native</Text>
         </View>
         <ScrollView>
-          <Text>This is Parent class Component</Text>
-          <View>
-            <TextInput placeholder="Enter Your Name" />
-            <Button title="Press Me" onPress={this.fruit} />
-          </View>
-          <Student />
+          <Text>This is Sub Class Component for student</Text>
         </ScrollView>
       </View>
     );
   }
 }
 
-export default App;
+export default Student;
 
 const styles = StyleSheet.create({
   container: {
