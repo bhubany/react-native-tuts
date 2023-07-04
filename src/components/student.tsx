@@ -3,6 +3,7 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 class Student extends Component {
   render() {
+    console.warn(this.props);
     return (
       <View style={styles.container}>
         <View style={styles.subContainer}>
@@ -10,6 +11,7 @@ class Student extends Component {
         </View>
         <ScrollView>
           <Text>This is Sub Class Component for student</Text>
+          <Text>Student name: {this.props.name}</Text>
         </ScrollView>
       </View>
     );

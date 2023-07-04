@@ -10,6 +10,17 @@ import {
 import Student from './components/student';
 
 class App extends Component {
+  //Need to call constructor
+  constructor() {
+    super();
+    this.state = {
+      name: 'ABCD',
+    };
+  }
+
+  updateNname(val: string) {
+    this.setState({name: val});
+  }
   fruit = () => {
     console.warn('Apple');
   };
@@ -22,10 +33,13 @@ class App extends Component {
         <ScrollView>
           <Text>This is Parent class Component</Text>
           <View>
-            <TextInput placeholder="Enter Your Name" />
-            <Button title="Press Me" onPress={this.fruit} />
+            <TextInput
+              placeholder="Enter Your Name"
+              onChangeText={text => this.updateNname(text)}
+            />
+            <Button title="Press Me" />
           </View>
-          <Student />
+          <Student name={this.state.name} />
         </ScrollView>
       </View>
     );
